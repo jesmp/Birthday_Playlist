@@ -18,58 +18,41 @@
 </ul>
 
 <h2>📦 Installation</h2>
-Clone the repo
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/birthday-playlist-generator.git
-cd birthday-playlist-generator
-Create and activate a virtual environment (optional but recommended)
-
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install dependencies
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Create a .env file
-
-Create a .env file in the root directory with the following keys:
-
-env
-Copy
-Edit
-CLIENT_ID=your_spotify_client_id
+  <ol>
+    <li><strong>Clone the repo</strong>
+      <pre><code>git clone https://github.com/yourusername/birthday-playlist-generator.git cd birthday-playlist-generator</code></pre>
+    </li>
+    <li><strong>Create and activate a virtual environment (optional but recommended)</strong>
+      <pre><code>python -m venv venv  source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
+    </li>
+    <li><strong>Install dependencies</strong>
+      <pre><code>pip install -r requirements.txt</code></pre>
+    </li>
+    <li><strong>Create a <code>.env</code> file</strong>
+      <p>Create a <code>.env</code> file in the root directory with the following content:</p>
+      <pre><code>CLIENT_ID=your_spotify_client_id
 CLIENT_SECRET=your_spotify_client_secret
-SPOTIFY_USERID=your_spotify_user_id
-Run the app
+SPOTIFY_USERID=your_spotify_user_id</code></pre>
+    </li>
+    <li><strong>Run the app</strong>
+      <pre><code>python main.py</code></pre>
+    </li>
+  </ol>
 
-bash
-Copy
-Edit
-python main.py
-🧠 How It Works
-You'll be prompted to enter a birth date, playlist name, and description.
+  <h2>🧠 How It Works</h2>
+  <ol>
+    <li>You’ll be prompted to enter a <strong>birth date</strong>, playlist <strong>name</strong>, and <strong>description</strong>.</li>
+    <li>The app scrapes the #1 song from Billboard for that date across each year.</li>
+    <li>Each song is searched on Spotify.</li>
+    <li>A new <strong>private playlist</strong> is created in your Spotify account and populated with the found songs.</li>
+  </ol>
 
-The app scrapes the #1 song from Billboard for that date across each year.
+  <h2>⚠️ Notes</h2>
+  <ul>
+    <li>Some songs may not exist on Spotify — the app will skip those with a warning.</li>
+    <li>Make sure your Spotify Developer app has the correct <strong>redirect URI</strong> (<code>https://example.com</code> by default; adjust as needed).</li>
+    <li>The app creates a private playlist by default. Modify <code>spotify_data["public"]</code> to <code>True</code> if you want it to be public.</li>
+  </ul>
 
-Each song is searched on Spotify.
-
-A new private playlist is created in your Spotify account and populated with the found songs.
-
-⚠️ Notes
-Some songs may not exist on Spotify — the app will skip those with a warning.
-
-Make sure your Spotify developer app has the correct redirect URI (https://example.com is used by default; adjust as needed).
-
-The app creates a private playlist by default. Modify spotify_data["public"] to True if you want it public.
-
-📄 License
-This project is open-source and free to use under the MIT License.
-
+  <h2>📄 License</h2>
+  <p>This project is open-source and free to use under the <a href="#">MIT License</a>.</p>
